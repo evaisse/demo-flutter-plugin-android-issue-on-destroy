@@ -11,7 +11,7 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 
-private const val TAG = "onDestroyIssue"
+private const val TAG = "FlutterPluginActivity"
 
 /** HellodestroyPlugin */
 class HellodestroyPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -38,6 +38,7 @@ class HellodestroyPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   }
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+    Log.d(TAG, "onAttachedToEngine")
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "hellodestroy")
     channel.setMethodCallHandler(this)
   }
@@ -51,6 +52,7 @@ class HellodestroyPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
+    Log.d(TAG, "onDetachedFromEngine")
     channel.setMethodCallHandler(null)
   }
 }

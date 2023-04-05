@@ -4,7 +4,7 @@ import android.util.Log
 import io.flutter.embedding.android.FlutterActivity
 
 
-private const val TAG = "onDestroyIssue"
+private const val TAG = "FlutterPluginActivity"
 
 class MainActivity: FlutterActivity() {
 
